@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { connect } from 'mongoose';
-import{ connectDb } from '.'
+import { connectDb } from './db/db.js';
 import cors from 'cors'
 dotenv.config();
 
