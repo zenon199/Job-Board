@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { connect } from 'mongoose';
-import { connectDb } from './database/db.js';
+import{ connectDb } from '.'
 import cors from 'cors'
 dotenv.config();
 
@@ -10,18 +10,15 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/uploads", express.static("uploads"));
-
-
 // Importing routes
-import userRoutes from './routes/user.js';
-import courseRoutes from './routes/course.js';
-import adminRoutes from './routes/admin.js';
+import jobSeekerRoutes from './routes/jobSeeker.js';
+import jobRoutes from './routes/jobs.js';
+import jobCreaterRoutes from './routes/jobCreater.js';
 
 //using routes
-app.use("/api", userRoutes);
-app.use("/api", courseRoutes);
-app.use("/api", adminRoutes);
+app.use("/api", jobSeekerRoutes);
+app.use("/api", jobRoutes);
+app.use("/api", jobCreaterRoutes);
 
 
 

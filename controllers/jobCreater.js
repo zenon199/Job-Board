@@ -4,7 +4,7 @@ import { Jobs } from "../db/job.js";
 import {User} from "../db/user.js"
 
 
-export const createCourse = TryCatch(async(req,res) => {
+export const createJob = TryCatch(async(req,res) => {
     const {title, description, category, createdBy, duration, price} = req.body;
 
     await Jobs.create({
